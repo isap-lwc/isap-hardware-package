@@ -1,0 +1,181 @@
+Notation:
+
+Na, Nm, Nc, Nh : the number of complete blocks of associated data, plaintext, ciphertext, and hash message, respectively
+
+Ina, Inm, Inc, Inh : binary variables equal to 1 if the last block of the respective data type is incomplete, and 0 otherwise
+
+Bla, Blm, Blc, Blh : the number of bytes in the incomplete block of associated data, plaintext, ciphertext, and hash message, respectively.
+
+v1: isapk128av20
+
+a. Design goal
+
+Support for authenticated encryption, decryption, and hashing.
+Folded architecture, providing trade-off between throughput and area.
+No BRAMs, no DSP units.
+All RAMs using asynchronous read.
+
+b. Supported maximum sizes of inputs
+
+2^16-1
+
+c. Reference software implementation
+
+Implementations/crypto_aead/isapk128av20/ref
+in https://csrc.nist.gov/CSRC/media/Projects/lightweight-cryptography/documents/round-2/submissions-rnd2/isap.zip
+
+d. Non-default values of generics and constants
+
+design_pkg.vhd:
+CONSTANT variant : set_selector := lwc_16; -- supported by v1, v2, v3, v4
+comment in lines 44 to 55
+comment out lines 66 to 77
+comment out lines 88 to 99
+comment out lines 110 to 121
+
+LWC_TB.vhd:
+Make sure the correct KAT files are used
+
+e. Block sizes
+
+AD block size = 144 bits
+Plaintext/Ciphertext block size = 144 bits
+Hash block size = ---
+
+f. Execution times
+
+Execution time of authenticated encryption (16-bit interface):
+22 +\
+((Nm>0)|(Inm>0))*145 +\
+((Nm>0)|(Inm>0))*(Nm*17) +\
+((Nm>0)|(Inm>0))*(Inm*((Blm+1)//2 + 8)) +\
+18 +\
+25*Na +\
+Ina*((Bla+1)//2 + 16) +\
+(Ina==0)*16 +\
+1 +\
+25*Nm +\
+Inm*((Blm+1)//2 + 16) +\
+(Inm==0)*16 +\
+170
+
+Execution time of authenticated decryption (16-bit interface):
+38 +\
+25*Na +\
+Ina*((Bla+1)//2 + 16) +\
+(Ina==0)*16 +\
+1 +\
+25*Nc +\
+Inc*((Blc+1)//2 + 16) +\
+(Inc==0)*16 +\
+170 +\
+((Nc>0)|(Inc>0))*(145) +\
+((Nc>0)|(Inc>0))*(Nc*17) +\
+((Nc>0)|(Inc>0))*(Inc*((Blc+1)//2 + 8)) +\
+1
+
+Execution time of hashing (32-bit interface):
+---
+
+g. Latencies
+
+Latency of authenticated encryption:
+243
+
+Latency of authenticated decryption:
+242
+
+h. Difference between execution times for a new key and the same key
+0
+
+v2: isapa128av20
+
+a. Design goal
+
+Support for authenticated encryption, decryption, and hashing.
+Folded architecture, providing trade-off between throughput and area.
+No BRAMs, no DSP units.
+All RAMs using asynchronous read.
+
+b. Supported maximum sizes of inputs
+
+2^16-1
+
+c. Reference software implementation
+
+Implementations/crypto_aead/isapa128av20/ref
+in https://csrc.nist.gov/CSRC/media/Projects/lightweight-cryptography/documents/round-2/submissions-rnd2/isap.zip
+
+d. Non-default values of generics and constants
+
+design_pkg.vhd:
+CONSTANT variant : set_selector := lwc_16; -- supported by v1, v2, v3, v4
+comment out lines 44 to 55
+comment in lines 66 to 77
+comment out lines 88 to 99
+comment out lines 110 to 121
+
+LWC_TB.vhd:
+Make sure the correct KAT files are used
+
+e. Block sizes
+
+AD block size = 64 bits
+Plaintext/Ciphertext block size = 64 bits
+
+f. Execution times
+
+Execution time of authenticated encryption (16-bit interface):
+runtime_enc =\
+22 +\
+((Nm>0)|(Inm>0))*(153) +\
+((Nm>0)|(Inm>0))*(Nm*10) +\
+((Nm>0)|(Inm>0))*(Inm*(6+((Blm+1)//2))) +\
+14 +\
+16*Na +\
+Ina*((Bla+1)//2 + 12) +\
+(Ina==0)*12 +\
+1 +\
+16*Nm +\
+Inm*((Blm+1)//2 + 12) +\
+(Inm==0)*12 +\
+174
+
+Execution time of authenticated decryption (16-bit interface):
+runtime_dec =\
+34 +\
+16*Na +\
+Ina*((Bla+1)//2 + 12) +\
+(Ina==0)*12 +\
+1 +\
+16*Nc +\
+Inc*((Blc+1)//2 + 12) +\
+(Inc==0)*12 +\
+174 +\
+((Nc>0)|(Inc>0))*(153) +\
+((Nc>0)|(Inc>0))*(Nc*10) +\
+((Nc>0)|(Inc>0))*(Inc*(6+((Blc+1)//2))) +\
+1
+
+Execution time of hashing:
+---
+
+g. Latencies
+
+Latency of authenticated encryption:
+235
+
+Latency of authenticated decryption:
+234
+
+h. Difference between execution times for a new key and the same key
+0
+
+v3: isapk128v20
+
+Ignore for now
+
+v4: isapa128v20
+
+Ignore for now
+
