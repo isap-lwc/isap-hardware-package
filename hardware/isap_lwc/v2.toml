@@ -1,0 +1,57 @@
+name = "ISAP-K-128a-v2"
+description = "Plain ISAP hardware implementation with 16-bit interface"
+author = ["Robert Primas"]
+url = "https://github.com/isap-lwc/isap-hardware-package"
+license = "GPL-3.0"
+version = "3.0"
+
+[rtl]
+sources = [
+"src_rtl/v2/design_pkg.vhd"
+"src_rtl/v2/CryptoCore.vhd"
+"src_rtl/v2/LWC/NIST_LWAPI_pkg.vhd"
+"src_rtl/v2/LWC/key_piso.vhd"
+"src_rtl/v2/LWC/fwft_fifo.vhd"
+"src_rtl/v2/LWC/data_sipo.vhd"
+"src_rtl/v2/LWC/data_piso.vhd"
+"src_rtl/v2/LWC/StepDownCountLd.vhd"
+"src_rtl/v2/LWC/PreProcessor.vhd"
+"src_rtl/v2/LWC/PostProcessor.vhd"
+"src_rtl/v2/LWC/LWC.vhd"
+]
+top = "LWC"
+
+[language]
+vhdl.version = "2008"
+
+[tb]
+sources = [
+"src_rtl/v2/LWC_TB_compatibility_pkg.vhd"
+"src_rtl/v2/LWC_TB.vhd"
+]
+top = "LWC_TB"
+
+[lwc.aead]
+algorithm = "isapk128av20"
+key_bits = 128
+npub_bits = 128
+tag_bits = 128
+input_sequence.encrypt = [ "npub", "pt", "ad", "tag" ]
+input_sequence.decrypt = [ "npub", "ad", "ct", "tag" ]
+
+[lwc.hash]
+# algorithm = "asconhashv12"
+# digest_bits = 256
+
+[lwc.ports]
+pdi.bit_width = 16
+pdi.num_shares = 0
+rdi.bit_width = 0
+sdi.bit_width = 16
+sdi.num_shares = 0
+
+[lwc.sca_protection]
+target = ["timing", "spa", "dpa", "dfa", "sifa"]
+note = "The concrete hardening/protection claims of the ISAP mode against implementation attacks are summarized in docs/documentation.pdf. Regarding SPA protection we consider attacks on interfaces as out of scope."
+order = 0
+

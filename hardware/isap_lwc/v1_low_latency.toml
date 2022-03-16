@@ -1,0 +1,57 @@
+name = "ISAP-A-128a-v1_low_latency"
+description = "Plain ISAP hardware implementation with 32-bit interface, 2 permutation rounds per clock cycle"
+author = ["Robert Primas"]
+url = "https://github.com/isap-lwc/isap-hardware-package"
+license = "GPL-3.0"
+version = "3.0"
+
+[rtl]
+sources = [
+"src_rtl/v1_low_latency/design_pkg.vhd"
+"src_rtl/v1_low_latency/CryptoCore.vhd"
+"src_rtl/v1_low_latency/LWC/NIST_LWAPI_pkg.vhd"
+"src_rtl/v1_low_latency/LWC/key_piso.vhd"
+"src_rtl/v1_low_latency/LWC/fwft_fifo.vhd"
+"src_rtl/v1_low_latency/LWC/data_sipo.vhd"
+"src_rtl/v1_low_latency/LWC/data_piso.vhd"
+"src_rtl/v1_low_latency/LWC/StepDownCountLd.vhd"
+"src_rtl/v1_low_latency/LWC/PreProcessor.vhd"
+"src_rtl/v1_low_latency/LWC/PostProcessor.vhd"
+"src_rtl/v1_low_latency/LWC/LWC.vhd"
+]
+top = "LWC"
+
+[language]
+vhdl.version = "2008"
+
+[tb]
+sources = [
+"src_rtl/v1_low_latency/LWC_TB_compatibility_pkg.vhd"
+"src_rtl/v1_low_latency/LWC_TB.vhd"
+]
+top = "LWC_TB"
+
+[lwc.aead]
+algorithm = "isapa128av20"
+key_bits = 128
+npub_bits = 128
+tag_bits = 128
+input_sequence.encrypt = [ "npub", "pt", "ad", "tag" ]
+input_sequence.decrypt = [ "npub", "ad", "ct", "tag" ]
+
+[lwc.hash]
+algorithm = "asconhashv12"
+digest_bits = 256
+
+[lwc.ports]
+pdi.bit_width = 32
+pdi.num_shares = 0
+rdi.bit_width = 0
+sdi.bit_width = 32
+sdi.num_shares = 0
+
+[lwc.sca_protection]
+target = ["timing", "spa", "dpa", "dfa", "sifa"]
+note = "The concrete hardening/protection claims of the ISAP mode against implementation attacks are summarized in docs/documentation.pdf. Regarding SPA protection we consider attacks on interfaces as out of scope."
+order = 0
+

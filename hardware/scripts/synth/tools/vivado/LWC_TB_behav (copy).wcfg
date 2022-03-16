@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="LWC_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="LWC_TB" />
+            <top_module name="design_pkg" />
+            <top_module name="lwc_tb_compatibility_pkg" />
+            <top_module name="nist_lwapi_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="4125239fs"></ZoomStartTime>
+      <ZoomEndTime time="4914740fs"></ZoomEndTime>
+      <Cursor1Time time="4166739fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="199"></NameColumnWidth>
+      <ValueColumnWidth column_width="96"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="39" />
+   <wave_markers>
+      <marker label="" time="2300000" />
+      <marker label="" time="4460000" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider115" type="divider">
+      <obj_property name="label">SDI</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/LWC_TB/uut/sdi_data">
+      <obj_property name="ElementShortName">sdi_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sdi_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/sdi_valid">
+      <obj_property name="ElementShortName">sdi_valid</obj_property>
+      <obj_property name="ObjectShortName">sdi_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/sdi_ready">
+      <obj_property name="ElementShortName">sdi_ready</obj_property>
+      <obj_property name="ObjectShortName">sdi_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider695" type="divider">
+      <obj_property name="label">BDI</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/LWC_TB/uut/Inst_Cipher/bdi">
+      <obj_property name="ElementShortName">bdi[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bdi[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/bdi_valid">
+      <obj_property name="ElementShortName">bdi_valid</obj_property>
+      <obj_property name="ObjectShortName">bdi_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/bdi_ready">
+      <obj_property name="ElementShortName">bdi_ready</obj_property>
+      <obj_property name="ObjectShortName">bdi_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/bdi_eot">
+      <obj_property name="ElementShortName">bdi_eot</obj_property>
+      <obj_property name="ObjectShortName">bdi_eot</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/bdi_eoi">
+      <obj_property name="ElementShortName">bdi_eoi</obj_property>
+      <obj_property name="ObjectShortName">bdi_eoi</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/LWC_TB/uut/Inst_Cipher/bdi_type">
+      <obj_property name="ElementShortName">bdi_type[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bdi_type[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/hash_in">
+      <obj_property name="ElementShortName">hash_in</obj_property>
+      <obj_property name="ObjectShortName">hash_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider702" type="divider">
+      <obj_property name="label">BDO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/LWC_TB/uut/Inst_Cipher/bdo_s">
+      <obj_property name="ElementShortName">bdo_s[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bdo_s[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/LWC_TB/uut/Inst_Cipher/bdo_valid_bytes_s">
+      <obj_property name="ElementShortName">bdo_valid_bytes_s[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bdo_valid_bytes_s[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/bdo_valid_s">
+      <obj_property name="ElementShortName">bdo_valid_s</obj_property>
+      <obj_property name="ObjectShortName">bdo_valid_s</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/LWC_TB/uut/Inst_Cipher/bdo_type_s">
+      <obj_property name="ElementShortName">bdo_type_s[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bdo_type_s[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/end_of_block">
+      <obj_property name="ElementShortName">end_of_block</obj_property>
+      <obj_property name="ObjectShortName">end_of_block</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider694" type="divider">
+      <obj_property name="label">ISAP</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_Cipher/state_s">
+      <obj_property name="ElementShortName">state_s</obj_property>
+      <obj_property name="ObjectShortName">state_s</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_Cipher/isap_encmac_s">
+      <obj_property name="ElementShortName">isap_encmac_s</obj_property>
+      <obj_property name="ObjectShortName">isap_encmac_s</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/LWC_TB/uut/Inst_Cipher/isap_state_s">
+      <obj_property name="ElementShortName">isap_state_s[319:0]</obj_property>
+      <obj_property name="ObjectShortName">isap_state_s[319:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_Cipher/word_idx_s">
+      <obj_property name="ElementShortName">word_idx_s</obj_property>
+      <obj_property name="ObjectShortName">word_idx_s</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/LWC_TB/uut/Inst_Cipher/isap_cnt_s">
+      <obj_property name="ElementShortName">isap_cnt_s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">isap_cnt_s[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_Cipher/isap_cnt_y_s">
+      <obj_property name="ElementShortName">isap_cnt_y_s</obj_property>
+      <obj_property name="ObjectShortName">isap_cnt_y_s</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/LWC_TB/uut/Inst_Cipher/isap_key_s">
+      <obj_property name="ElementShortName">isap_key_s[127:0]</obj_property>
+      <obj_property name="ObjectShortName">isap_key_s[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/LWC_TB/uut/Inst_Cipher/isap_nonce_s">
+      <obj_property name="ElementShortName">isap_nonce_s[127:0]</obj_property>
+      <obj_property name="ObjectShortName">isap_nonce_s[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_Cipher/hash_cnt_s">
+      <obj_property name="ElementShortName">hash_cnt_s</obj_property>
+      <obj_property name="ObjectShortName">hash_cnt_s</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/msg_auth">
+      <obj_property name="ElementShortName">msg_auth</obj_property>
+      <obj_property name="ObjectShortName">msg_auth</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/msg_auth_valid">
+      <obj_property name="ElementShortName">msg_auth_valid</obj_property>
+      <obj_property name="ObjectShortName">msg_auth_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/msg_auth_ready">
+      <obj_property name="ElementShortName">msg_auth_ready</obj_property>
+      <obj_property name="ObjectShortName">msg_auth_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/pad_added_s">
+      <obj_property name="ElementShortName">pad_added_s</obj_property>
+      <obj_property name="ObjectShortName">pad_added_s</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/eoi_s">
+      <obj_property name="ElementShortName">eoi_s</obj_property>
+      <obj_property name="ObjectShortName">eoi_s</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/LWC_TB/uut/Inst_Cipher/hash_s">
+      <obj_property name="ElementShortName">hash_s</obj_property>
+      <obj_property name="ObjectShortName">hash_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider715" type="divider">
+      <obj_property name="label">PrePro</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_PreProcessor/fsm_32bit/pr_state">
+      <obj_property name="ElementShortName">pr_state</obj_property>
+      <obj_property name="ObjectShortName">pr_state</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_PreProcessor/fsm_16bit/pr_state">
+      <obj_property name="ElementShortName">pr_state</obj_property>
+      <obj_property name="ObjectShortName">pr_state</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_PreProcessor/fsm_8bit/pr_state">
+      <obj_property name="ElementShortName">pr_state</obj_property>
+      <obj_property name="ObjectShortName">pr_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider714" type="divider">
+      <obj_property name="label">PostPro</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_PostProcessor/fsm_32bit/pr_state">
+      <obj_property name="ElementShortName">pr_state</obj_property>
+      <obj_property name="ObjectShortName">pr_state</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_PostProcessor/fsm_16bit/pr_state">
+      <obj_property name="ElementShortName">pr_state</obj_property>
+      <obj_property name="ObjectShortName">pr_state</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/LWC_TB/uut/Inst_PostProcessor/fsm_8bit/pr_state">
+      <obj_property name="ElementShortName">pr_state</obj_property>
+      <obj_property name="ObjectShortName">pr_state</obj_property>
+   </wvobject>
+</wave_config>
