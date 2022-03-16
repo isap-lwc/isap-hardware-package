@@ -1,4 +1,4 @@
-#  NIST LWC Hardware API reference implementation of [ISAP v2.0](isap.iaik.tugraz.at)
+#  NIST LWC Hardware API reference implementation of (ISAP v2.0)[isap.iaik.tugraz.at]
 * Hardware Design Group: Institute of Applied Information Processing and Communications
 * Primary Hardware Designers: Robert Primas, https://rprimas.github.io, rprimas@protonmail.com
 * LWC candidate: ISAP
