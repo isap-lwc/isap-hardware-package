@@ -1,2 +1,0 @@
-LWC_TB_compatibility_pkg.vhd
-LWC_TB.vhd
