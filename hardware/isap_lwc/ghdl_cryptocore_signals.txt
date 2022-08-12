@@ -1,0 +1,376 @@
+$ version 1.1
+
+# Signals in packages :
+
+# Signals in entities :
+# /lwc_tb/stop_clock
+# /lwc_tb/reset_done
+# /lwc_tb/clk
+# /lwc_tb/rst
+# /lwc_tb/pdi_data
+# /lwc_tb/pdi_data_delayed
+# /lwc_tb/pdi_valid
+# /lwc_tb/pdi_valid_delayed
+# /lwc_tb/pdi_ready
+# /lwc_tb/sdi_data
+# /lwc_tb/sdi_data_delayed
+# /lwc_tb/sdi_valid
+# /lwc_tb/sdi_valid_delayed
+# /lwc_tb/sdi_ready
+# /lwc_tb/do_data
+# /lwc_tb/do_valid
+# /lwc_tb/do_last
+# /lwc_tb/do_ready
+# /lwc_tb/do_ready_delayed
+# /lwc_tb/rdi_data
+# /lwc_tb/rdi_data_delayed
+# /lwc_tb/rdi_valid
+# /lwc_tb/rdi_valid_delayed
+# /lwc_tb/rdi_ready
+# /lwc_tb/pdi_operation_count
+# /lwc_tb/cycle_counter
+# /lwc_tb/idle_counter
+# /lwc_tb/num_rand_vectors
+# /lwc_tb/start_cycle
+# /lwc_tb/timing_started
+# /lwc_tb/timing_stopped
+# /lwc_tb/uut/clk
+# /lwc_tb/uut/rst
+# /lwc_tb/uut/pdi_data
+# /lwc_tb/uut/pdi_valid
+# /lwc_tb/uut/pdi_ready
+# /lwc_tb/uut/sdi_data
+# /lwc_tb/uut/sdi_valid
+# /lwc_tb/uut/sdi_ready
+# /lwc_tb/uut/do_data
+# /lwc_tb/uut/do_ready
+# /lwc_tb/uut/do_valid
+# /lwc_tb/uut/do_last
+# /lwc_tb/uut/fdi_data
+# /lwc_tb/uut/fdo_data
+# /lwc_tb/uut/fdi_valid
+# /lwc_tb/uut/fdo_valid
+# /lwc_tb/uut/fdi_ready
+# /lwc_tb/uut/fdo_ready
+# /lwc_tb/uut/uut/clk
+# /lwc_tb/uut/uut/rst
+# /lwc_tb/uut/uut/pdi_data
+# /lwc_tb/uut/uut/pdi_valid
+# /lwc_tb/uut/uut/pdi_ready
+# /lwc_tb/uut/uut/sdi_data
+# /lwc_tb/uut/uut/sdi_valid
+# /lwc_tb/uut/uut/sdi_ready
+# /lwc_tb/uut/uut/do_data
+# /lwc_tb/uut/uut/do_ready
+# /lwc_tb/uut/uut/do_valid
+# /lwc_tb/uut/uut/do_last
+# /lwc_tb/uut/uut/fdi_data
+# /lwc_tb/uut/uut/fdi_valid
+# /lwc_tb/uut/uut/fdi_ready
+# /lwc_tb/uut/uut/fdo_data
+# /lwc_tb/uut/uut/fdo_valid
+# /lwc_tb/uut/uut/fdo_ready
+# /lwc_tb/uut/uut/key_cipher_in
+# /lwc_tb/uut/uut/key_valid_cipher_in
+# /lwc_tb/uut/uut/key_ready_cipher_in
+# /lwc_tb/uut/uut/bdi_cipher_in
+# /lwc_tb/uut/uut/bdi_valid_cipher_in
+# /lwc_tb/uut/uut/bdi_ready_cipher_in
+# /lwc_tb/uut/uut/bdi_pad_loc_cipher_in
+# /lwc_tb/uut/uut/bdi_valid_bytes_cipher_in
+# /lwc_tb/uut/uut/bdi_size_cipher_in
+# /lwc_tb/uut/uut/bdi_eot_cipher_in
+# /lwc_tb/uut/uut/bdi_eoi_cipher_in
+# /lwc_tb/uut/uut/bdi_type_cipher_in
+# /lwc_tb/uut/uut/decrypt_cipher_in
+# /lwc_tb/uut/uut/hash_cipher_in
+# /lwc_tb/uut/uut/key_update_cipher_in
+# /lwc_tb/uut/uut/bdo_cipher_out
+# /lwc_tb/uut/uut/bdo_valid_cipher_out
+# /lwc_tb/uut/uut/bdo_ready_cipher_out
+# /lwc_tb/uut/uut/end_of_block_cipher_out
+# /lwc_tb/uut/uut/bdo_valid_bytes_cipher_out
+# /lwc_tb/uut/uut/bdo_type_cipher_out
+# /lwc_tb/uut/uut/msg_auth_valid
+# /lwc_tb/uut/uut/msg_auth_ready
+# /lwc_tb/uut/uut/msg_auth
+# /lwc_tb/uut/uut/cmd_fifo_in
+# /lwc_tb/uut/uut/cmd_valid_fifo_in
+# /lwc_tb/uut/uut/cmd_ready_fifo_in
+# /lwc_tb/uut/uut/cmd_fifo_out
+# /lwc_tb/uut/uut/cmd_valid_fifo_out
+# /lwc_tb/uut/uut/cmd_ready_fifo_out
+# /lwc_tb/uut/uut/inst_preprocessor/clk
+# /lwc_tb/uut/uut/inst_preprocessor/rst
+# /lwc_tb/uut/uut/inst_preprocessor/pdi_data
+# /lwc_tb/uut/uut/inst_preprocessor/pdi_valid
+# /lwc_tb/uut/uut/inst_preprocessor/pdi_ready
+# /lwc_tb/uut/uut/inst_preprocessor/sdi_data
+# /lwc_tb/uut/uut/inst_preprocessor/sdi_valid
+# /lwc_tb/uut/uut/inst_preprocessor/sdi_ready
+# /lwc_tb/uut/uut/inst_preprocessor/key_data
+# /lwc_tb/uut/uut/inst_preprocessor/key_valid
+# /lwc_tb/uut/uut/inst_preprocessor/key_ready
+# /lwc_tb/uut/uut/inst_preprocessor/key_update
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_data
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_valid_bytes
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_pad_loc
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_size
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_eot
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_eoi
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_type
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_valid
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_ready
+# /lwc_tb/uut/uut/inst_preprocessor/decrypt
+# /lwc_tb/uut/uut/inst_preprocessor/hash
+# /lwc_tb/uut/uut/inst_preprocessor/cmd_data
+# /lwc_tb/uut/uut/inst_preprocessor/cmd_valid
+# /lwc_tb/uut/uut/inst_preprocessor/cmd_ready
+# /lwc_tb/uut/uut/inst_preprocessor/state
+# /lwc_tb/uut/uut/inst_preprocessor/seglen_counter
+# /lwc_tb/uut/uut/inst_preprocessor/eoi_flag
+# /lwc_tb/uut/uut/inst_preprocessor/eot_flag
+# /lwc_tb/uut/uut/inst_preprocessor/last_flag
+# /lwc_tb/uut/uut/inst_preprocessor/decrypt_op
+# /lwc_tb/uut/uut/inst_preprocessor/hash_op
+# /lwc_tb/uut/uut/inst_preprocessor/hdr_type
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_eoi_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_eot_p
+# /lwc_tb/uut/uut/inst_preprocessor/pdi_ready_o
+# /lwc_tb/uut/uut/inst_preprocessor/sdi_ready_o
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_valid_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_ready_p
+# /lwc_tb/uut/uut/inst_preprocessor/key_valid_p
+# /lwc_tb/uut/uut/inst_preprocessor/key_ready_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_size_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_pad_loc_p
+# /lwc_tb/uut/uut/inst_preprocessor/op_is_actkey
+# /lwc_tb/uut/uut/inst_preprocessor/op_is_hash
+# /lwc_tb/uut/uut/inst_preprocessor/hdr_first
+# /lwc_tb/uut/uut/inst_preprocessor/hdr_last
+# /lwc_tb/uut/uut/inst_preprocessor/reading_pdi_hdr
+# /lwc_tb/uut/uut/inst_preprocessor/reading_sdi_hdr
+# /lwc_tb/uut/uut/inst_preprocessor/pdi_fire
+# /lwc_tb/uut/uut/inst_preprocessor/sdi_fire
+# /lwc_tb/uut/uut/inst_preprocessor/seglen
+# /lwc_tb/uut/uut/inst_preprocessor/hdr_seglen
+# /lwc_tb/uut/uut/inst_preprocessor/seglen_is_zero
+# /lwc_tb/uut/uut/inst_preprocessor/last_flit_of_segment
+# /lwc_tb/uut/uut/inst_preprocessor/relay_hdr_to_postproc
+# /lwc_tb/uut/uut/inst_preprocessor/bdi_valid_bytes_p
+# /lwc_tb/uut/uut/inst_preprocessor/nx_state
+# /lwc_tb/uut/uut/inst_preprocessor/cur_hdr_last
+# /lwc_tb/uut/uut/inst_preprocessor/received_wrong_header
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/clk
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/rst
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/data_s
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/data_valid_s
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/data_ready_s
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/data_p
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/data_valid_p
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/data_ready_p
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/nx_state
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/state
+# /lwc_tb/uut/uut/inst_preprocessor/keypiso/mux
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/clk
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/rst
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/data_size_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/data_size_s
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/data_s
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/data_valid_s
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/data_ready_s
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/data_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/data_valid_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/data_ready_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/valid_bytes_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/valid_bytes_s
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/pad_loc_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/pad_loc_s
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/eoi_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/eoi_s
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/eot_p
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/eot_s
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/nx_state
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/state
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/mux
+# /lwc_tb/uut/uut/inst_preprocessor/bdipiso/last
+/lwc_tb/uut/uut/inst_cipher/clk
+/lwc_tb/uut/uut/inst_cipher/rst
+/lwc_tb/uut/uut/inst_cipher/key
+/lwc_tb/uut/uut/inst_cipher/key_valid
+/lwc_tb/uut/uut/inst_cipher/key_ready
+/lwc_tb/uut/uut/inst_cipher/bdi
+/lwc_tb/uut/uut/inst_cipher/bdi_valid
+/lwc_tb/uut/uut/inst_cipher/bdi_ready
+/lwc_tb/uut/uut/inst_cipher/bdi_pad_loc
+/lwc_tb/uut/uut/inst_cipher/bdi_valid_bytes
+/lwc_tb/uut/uut/inst_cipher/bdi_size
+/lwc_tb/uut/uut/inst_cipher/bdi_eot
+/lwc_tb/uut/uut/inst_cipher/bdi_eoi
+/lwc_tb/uut/uut/inst_cipher/bdi_type
+/lwc_tb/uut/uut/inst_cipher/decrypt_in
+/lwc_tb/uut/uut/inst_cipher/key_update
+/lwc_tb/uut/uut/inst_cipher/hash_in
+/lwc_tb/uut/uut/inst_cipher/bdo
+/lwc_tb/uut/uut/inst_cipher/bdo_valid
+/lwc_tb/uut/uut/inst_cipher/bdo_ready
+/lwc_tb/uut/uut/inst_cipher/bdo_type
+/lwc_tb/uut/uut/inst_cipher/bdo_valid_bytes
+/lwc_tb/uut/uut/inst_cipher/end_of_block
+/lwc_tb/uut/uut/inst_cipher/msg_auth_valid
+/lwc_tb/uut/uut/inst_cipher/msg_auth_ready
+/lwc_tb/uut/uut/inst_cipher/msg_auth
+/lwc_tb/uut/uut/inst_cipher/fdi_data
+/lwc_tb/uut/uut/inst_cipher/fdi_valid
+/lwc_tb/uut/uut/inst_cipher/fdi_ready
+/lwc_tb/uut/uut/inst_cipher/fdo_data
+/lwc_tb/uut/uut/inst_cipher/fdo_valid
+/lwc_tb/uut/uut/inst_cipher/fdo_ready
+/lwc_tb/uut/uut/inst_cipher/n_state_s
+/lwc_tb/uut/uut/inst_cipher/state_s
+/lwc_tb/uut/uut/inst_cipher/isap_encmac_s
+/lwc_tb/uut/uut/inst_cipher/isap_auth_encdec_s
+/lwc_tb/uut/uut/inst_cipher/n_isap_auth_encdec_s
+/lwc_tb/uut/uut/inst_cipher/word_idx_s
+/lwc_tb/uut/uut/inst_cipher/key_s
+/lwc_tb/uut/uut/inst_cipher/key_ready_s
+/lwc_tb/uut/uut/inst_cipher/bdi_ready_s
+/lwc_tb/uut/uut/inst_cipher/bdi_s
+/lwc_tb/uut/uut/inst_cipher/bdi_valid_bytes_s
+/lwc_tb/uut/uut/inst_cipher/bdo_s
+/lwc_tb/uut/uut/inst_cipher/bdo_valid_bytes_s
+/lwc_tb/uut/uut/inst_cipher/bdo_valid_s
+/lwc_tb/uut/uut/inst_cipher/bdo_type_s
+/lwc_tb/uut/uut/inst_cipher/end_of_block_s
+/lwc_tb/uut/uut/inst_cipher/msg_auth_valid_s
+/lwc_tb/uut/uut/inst_cipher/bdi_pad_loc_s
+/lwc_tb/uut/uut/inst_cipher/bdoo_s
+/lwc_tb/uut/uut/inst_cipher/n_msg_auth_s
+/lwc_tb/uut/uut/inst_cipher/msg_auth_s
+/lwc_tb/uut/uut/inst_cipher/n_update_key_s
+/lwc_tb/uut/uut/inst_cipher/update_key_s
+/lwc_tb/uut/uut/inst_cipher/n_eoi_s
+/lwc_tb/uut/uut/inst_cipher/eoi_s
+/lwc_tb/uut/uut/inst_cipher/n_eot_s
+/lwc_tb/uut/uut/inst_cipher/eot_s
+/lwc_tb/uut/uut/inst_cipher/n_fifo_words_s
+/lwc_tb/uut/uut/inst_cipher/fifo_words_s
+/lwc_tb/uut/uut/inst_cipher/n_empty_hash_s
+/lwc_tb/uut/uut/inst_cipher/empty_hash_s
+/lwc_tb/uut/uut/inst_cipher/n_hash_s
+/lwc_tb/uut/uut/inst_cipher/hash_s
+/lwc_tb/uut/uut/inst_cipher/isap_state_s
+/lwc_tb/uut/uut/inst_cipher/isap_state_n_s
+/lwc_tb/uut/uut/inst_cipher/isap_cnt_s
+/lwc_tb/uut/uut/inst_cipher/isap_cnt_y_s
+/lwc_tb/uut/uut/inst_cipher/isap_key_s
+/lwc_tb/uut/uut/inst_cipher/isap_nonce_s
+/lwc_tb/uut/uut/inst_cipher/isap_y_s
+/lwc_tb/uut/uut/inst_cipher/isap_buf_s
+/lwc_tb/uut/uut/inst_cipher/isap_ctrl_s
+/lwc_tb/uut/uut/inst_cipher/fifo_din_s
+/lwc_tb/uut/uut/inst_cipher/fifo_din_valid_s
+/lwc_tb/uut/uut/inst_cipher/fifo_din_ready_s
+/lwc_tb/uut/uut/inst_cipher/fifo_dout_s
+/lwc_tb/uut/uut/inst_cipher/fifo_dout_valid_s
+/lwc_tb/uut/uut/inst_cipher/fifo_dout_ready_s
+/lwc_tb/uut/uut/inst_cipher/fifo_valid_bytes_s
+/lwc_tb/uut/uut/inst_cipher/fifo_last_word_valid_bytes_s
+/lwc_tb/uut/uut/inst_cipher/fifo_eoi
+/lwc_tb/uut/uut/inst_cipher/fifo_partial
+/lwc_tb/uut/uut/inst_cipher/perm_in_s
+/lwc_tb/uut/uut/inst_cipher/perm_out_s
+/lwc_tb/uut/uut/inst_cipher/pad_added_s
+/lwc_tb/uut/uut/inst_cipher/bit_idx_s
+/lwc_tb/uut/uut/inst_cipher/isap_state_cur_word_s
+/lwc_tb/uut/uut/inst_cipher/bdi_partial_s
+/lwc_tb/uut/uut/inst_cipher/bdi_masked_s
+/lwc_tb/uut/uut/inst_cipher/hash_cnt_s
+/lwc_tb/uut/uut/inst_cipher/g_asconp/i_asconp/state_in
+/lwc_tb/uut/uut/inst_cipher/g_asconp/i_asconp/rcon
+/lwc_tb/uut/uut/inst_cipher/g_asconp/i_asconp/state_out
+# /lwc_tb/uut/uut/inst_postprocessor/clk
+# /lwc_tb/uut/uut/inst_postprocessor/rst
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_data
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_valid_bytes
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_last
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_type
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_valid
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_ready
+# /lwc_tb/uut/uut/inst_postprocessor/auth_success
+# /lwc_tb/uut/uut/inst_postprocessor/auth_valid
+# /lwc_tb/uut/uut/inst_postprocessor/auth_ready
+# /lwc_tb/uut/uut/inst_postprocessor/cmd_data
+# /lwc_tb/uut/uut/inst_postprocessor/cmd_valid
+# /lwc_tb/uut/uut/inst_postprocessor/cmd_ready
+# /lwc_tb/uut/uut/inst_postprocessor/do_data
+# /lwc_tb/uut/uut/inst_postprocessor/do_last
+# /lwc_tb/uut/uut/inst_postprocessor/do_valid
+# /lwc_tb/uut/uut/inst_postprocessor/do_ready
+# /lwc_tb/uut/uut/inst_postprocessor/state
+# /lwc_tb/uut/uut/inst_postprocessor/eot_flag
+# /lwc_tb/uut/uut/inst_postprocessor/decrypt_flag
+# /lwc_tb/uut/uut/inst_postprocessor/status_success
+# /lwc_tb/uut/uut/inst_postprocessor/seglen_counter
+# /lwc_tb/uut/uut/inst_postprocessor/nx_state
+# /lwc_tb/uut/uut/inst_postprocessor/cmd_ready_o
+# /lwc_tb/uut/uut/inst_postprocessor/do_valid_o
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_cleared
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_valid_p
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_ready_p
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_last_p
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_data_p
+# /lwc_tb/uut/uut/inst_postprocessor/seglen
+# /lwc_tb/uut/uut/inst_postprocessor/nx_decrypt
+# /lwc_tb/uut/uut/inst_postprocessor/nx_eot
+# /lwc_tb/uut/uut/inst_postprocessor/seglen_is_zero
+# /lwc_tb/uut/uut/inst_postprocessor/do_fire
+# /lwc_tb/uut/uut/inst_postprocessor/cmd_fire
+# /lwc_tb/uut/uut/inst_postprocessor/bdo_p_fire
+# /lwc_tb/uut/uut/inst_postprocessor/op_is_hash
+# /lwc_tb/uut/uut/inst_postprocessor/op_is_decrypt
+# /lwc_tb/uut/uut/inst_postprocessor/reset_hdr_counter
+# /lwc_tb/uut/uut/inst_postprocessor/hdr_first
+# /lwc_tb/uut/uut/inst_postprocessor/hdr_last
+# /lwc_tb/uut/uut/inst_postprocessor/sending_hdr
+# /lwc_tb/uut/uut/inst_postprocessor/last_flit_of_segment
+# /lwc_tb/uut/uut/inst_postprocessor/bdosipo/clk
+# /lwc_tb/uut/uut/inst_postprocessor/bdosipo/rst
+# /lwc_tb/uut/uut/inst_postprocessor/bdosipo/data_s
+# /lwc_tb/uut/uut/inst_postprocessor/bdosipo/end_of_input
+# /lwc_tb/uut/uut/inst_postprocessor/bdosipo/data_valid_s
+# /lwc_tb/uut/uut/inst_postprocessor/bdosipo/data_ready_s
+# /lwc_tb/uut/uut/inst_postprocessor/bdosipo/data_p
+# /lwc_tb/uut/uut/inst_postprocessor/bdosipo/data_valid_p
+# /lwc_tb/uut/uut/inst_postprocessor/bdosipo/data_ready_p
+# /lwc_tb/uut/uut/inst_header_fifo/clk
+# /lwc_tb/uut/uut/inst_header_fifo/rst
+# /lwc_tb/uut/uut/inst_header_fifo/din
+# /lwc_tb/uut/uut/inst_header_fifo/din_valid
+# /lwc_tb/uut/uut/inst_header_fifo/din_ready
+# /lwc_tb/uut/uut/inst_header_fifo/dout
+# /lwc_tb/uut/uut/inst_header_fifo/dout_valid
+# /lwc_tb/uut/uut/inst_header_fifo/dout_ready
+# /lwc_tb/uut/uut/inst_header_fifo/storage
+# /lwc_tb/uut/uut/inst_header_fifo/gen_depth_1/full
+# /lwc_tb/uut/uut/inst_header_fifo/gen_depth_1/dout_valid_o
+# /lwc_tb/uut/uut/inst_header_fifo/gen_depth_1/din_ready_o
+# /lwc_tb/uut/uut/inst_header_fifo/gen_depth_1/enq
+# /lwc_tb/uut/uut/inst_header_fifo/gen_depth_1/deq
+# /lwc_tb/uut/twopassfifo/clk
+# /lwc_tb/uut/twopassfifo/rst
+# /lwc_tb/uut/twopassfifo/din
+# /lwc_tb/uut/twopassfifo/din_valid
+# /lwc_tb/uut/twopassfifo/din_ready
+# /lwc_tb/uut/twopassfifo/dout
+# /lwc_tb/uut/twopassfifo/dout_valid
+# /lwc_tb/uut/twopassfifo/dout_ready
+# /lwc_tb/uut/twopassfifo/storage
+# /lwc_tb/uut/twopassfifo/gen_depth_gt_2/rd_ptr
+# /lwc_tb/uut/twopassfifo/gen_depth_gt_2/wr_ptr
+# /lwc_tb/uut/twopassfifo/gen_depth_gt_2/empty
+# /lwc_tb/uut/twopassfifo/gen_depth_gt_2/next_rd_ptr
+# /lwc_tb/uut/twopassfifo/gen_depth_gt_2/enq
+# /lwc_tb/uut/twopassfifo/gen_depth_gt_2/deq
+# /lwc_tb/uut/twopassfifo/gen_depth_gt_2/din_ready_o
+# /lwc_tb/uut/twopassfifo/gen_depth_gt_2/dout_valid_o

@@ -1,0 +1,44 @@
+name = "v1_stp"
+description = "Implementation of isapa128av20 and asconhashv12 with W=32, CCW=32, and StP-based tag verification"
+
+[language]
+vhdl.standard = "2008"
+vhdl.synopsys = false
+
+[rtl]
+
+sources = [
+	"src_rtl/v1_stp/design_pkg.vhd",
+	"src_rtl/LWC_config_32.vhd",
+	"src_rtl/LWC/NIST_LWAPI_pkg.vhd",
+	"src_rtl/v1_stp/CryptoCore.vhd",
+	"src_rtl/LWC/key_piso.vhd",
+	"src_rtl/LWC/FIFO.vhd",
+	"src_rtl/LWC/data_sipo.vhd",
+	"src_rtl/LWC/data_piso.vhd",
+	"src_rtl/LWC/PreProcessor.vhd",
+	"src_rtl/LWC/PostProcessor.vhd",
+	"src_rtl/LWC/LWC_2pass.vhd"
+]
+top = 'LWC_2pass'
+clock.port = "clk"
+
+[tb]
+top = 'LWC_TB'
+sources = [
+	"src_tb/v1/LWC_config_tb.vhd",
+	"src_tb/LWC_TB_2pass_uut.vhd",
+	"src_tb/LWC_TB.vhd"
+]
+
+[tb.generics]
+G_FNAME_PDI.file = "KAT/v1/pdi.txt"
+G_FNAME_SDI.file = "KAT/v1/sdi.txt"
+G_FNAME_DO.file = "KAT/v1/do.txt"
+
+[lwc]
+aead.algorithm = "isapa128av20"
+hash.algorithm = "asconhashv12"
+
+ports.pdi.bit_width = 32
+ports.sdi.bit_width = 32

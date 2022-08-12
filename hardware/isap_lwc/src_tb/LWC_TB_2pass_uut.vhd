@@ -1,0 +1,1 @@
+../../LWC_tb/LWC_TB_2pass_uut.vhd

@@ -1,12 +1,12 @@
-#  NIST LWC Hardware Reference Implementation of [ISAP v2.0](isap.iaik.tugraz.at)
+#  NIST LWC Hardware Reference Implementation of [ISAP v2.0](https://isap.iaik.tugraz.at)
 
 - Hardware Design Group: Institute of Applied Information Processing and Communications, Graz, Austria
 - Primary Hardware Designers:
-  - Robert Primas (https://rprimas.github.io, rprimas@proton.me),
+  - Robert Primas (https://rprimas.github.io, rprimas@proton.me)
 - LWC candidate: ISAP
 - LWC Hardware API version: 1.2.0
 
-ISAP is a family of lightweight authenticated encryption algorithms designed with a focus on robustness against implementation attacks and is currently competing in the final round of the NIST Standardization Process for [Lightweight Cryptography](https://csrc.nist.gov/Projects/lightweight-cryptography/finalists) (2019-). It is of particular interest for applications like firmware updates where robustness against power analysis and fault attacks is crucial while codesize and a small footprint in hardware matters. ISAP's original version was published at FSE 2017. 
+ISAP is a family of lightweight authenticated encryption algorithms designed with a focus on robustness against implementation attacks and is currently competing in the final round of the NIST Standardization Process for [Lightweight Cryptography](https://csrc.nist.gov/Projects/lightweight-cryptography/finalists) (2019-). It is of particular interest for applications like firmware updates where robustness against power analysis and fault attacks is crucial while codesize and a small footprint in hardware matters. ISAP's original version was published at FSE 2017.
 
 ## Available Variants
 
@@ -47,3 +47,4 @@ ISAP is a family of lightweight authenticated encryption algorithms designed wit
 - Execute VHDL testbench for v1:
   - `cd ../../../hardware/isap_lwc`
   - `make v1`
+
