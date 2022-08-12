@@ -1,57 +1,44 @@
-name = "ISAP-A-128a-v1_16bit"
-description = "Plain ISAP hardware implementation with 32-bit interface"
-author = ["Robert Primas"]
-url = "https://github.com/isap-lwc/isap-hardware-package"
-license = "GPL-3.0"
-version = "3.0"
-
-[rtl]
-sources = [
-"src_rtl/v1_16bit/design_pkg.vhd"
-"src_rtl/v1_16bit/CryptoCore.vhd"
-"src_rtl/v1_16bit/LWC/NIST_LWAPI_pkg.vhd"
-"src_rtl/v1_16bit/LWC/key_piso.vhd"
-"src_rtl/v1_16bit/LWC/fwft_fifo.vhd"
-"src_rtl/v1_16bit/LWC/data_sipo.vhd"
-"src_rtl/v1_16bit/LWC/data_piso.vhd"
-"src_rtl/v1_16bit/LWC/StepDownCountLd.vhd"
-"src_rtl/v1_16bit/LWC/PreProcessor.vhd"
-"src_rtl/v1_16bit/LWC/PostProcessor.vhd"
-"src_rtl/v1_16bit/LWC/LWC.vhd"
-]
-top = "LWC"
+name = "v1_16bit"
+description = "Implementation of isapa128av20 and asconhashv12 with W=16 and CCW=16"
 
 [language]
-vhdl.version = "2008"
+vhdl.standard = "2008"
+vhdl.synopsys = false
+
+[rtl]
+
+sources = [
+	"src_rtl/v1_16bit/design_pkg.vhd",
+	"src_rtl/LWC_config_16.vhd",
+	"src_rtl/LWC/NIST_LWAPI_pkg.vhd",
+	"src_rtl/v1_16bit/CryptoCore.vhd",
+	"src_rtl/LWC/key_piso.vhd",
+	"src_rtl/LWC/FIFO.vhd",
+	"src_rtl/LWC/data_sipo.vhd",
+	"src_rtl/LWC/data_piso.vhd",
+	"src_rtl/LWC/PreProcessor.vhd",
+	"src_rtl/LWC/PostProcessor.vhd",
+	"src_rtl/LWC/LWC_2pass.vhd"
+]
+top = 'LWC_2pass'
+clock.port = "clk"
 
 [tb]
+top = 'LWC_TB'
 sources = [
-"src_rtl/v1_16bit/LWC_TB_compatibility_pkg.vhd"
-"src_rtl/v1_16bit/LWC_TB.vhd"
+	"src_tb/v1_16bit/LWC_config_tb.vhd",
+	"src_tb/LWC_TB_2pass_uut.vhd",
+	"src_tb/LWC_TB.vhd"
 ]
-top = "LWC_TB"
 
-[lwc.aead]
-algorithm = "isapa128av20"
-key_bits = 128
-npub_bits = 128
-tag_bits = 128
-input_sequence.encrypt = [ "npub", "pt", "ad", "tag" ]
-input_sequence.decrypt = [ "npub", "ad", "ct", "tag" ]
+[tb.generics]
+G_FNAME_PDI.file = "KAT/v1_16bit/pdi.txt"
+G_FNAME_SDI.file = "KAT/v1_16bit/sdi.txt"
+G_FNAME_DO.file = "KAT/v1_16bit/do.txt"
 
-[lwc.hash]
-algorithm = "asconhashv12"
-digest_bits = 256
+[lwc]
+aead.algorithm = "isapa128av20"
+hash.algorithm = "asconhashv12"
 
-[lwc.ports]
-pdi.bit_width = 16
-pdi.num_shares = 0
-rdi.bit_width = 0
-sdi.bit_width = 16
-sdi.num_shares = 0
-
-[lwc.sca_protection]
-target = ["timing", "spa", "dpa", "dfa", "sifa"]
-note = "The concrete hardening/protection claims of the ISAP mode against implementation attacks are summarized in docs/documentation.pdf. Regarding SPA protection we consider attacks on interfaces as out of scope."
-order = 0
-
+ports.pdi.bit_width = 16
+ports.sdi.bit_width = 16

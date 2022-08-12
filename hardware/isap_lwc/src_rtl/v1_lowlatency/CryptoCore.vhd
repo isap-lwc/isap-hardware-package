@@ -157,7 +157,7 @@ USE ieee.std_logic_misc.ALL;
 USE work.NIST_LWAPI_pkg.ALL;
 USE work.design_pkg.ALL;
 
-ENTITY CryptoCore IS
+ENTITY CryptoCore_2pass IS
 	PORT (
 		clk : IN STD_LOGIC;
 		rst : IN STD_LOGIC;
@@ -204,9 +204,9 @@ ENTITY CryptoCore IS
         fdo_valid        : out std_logic;
         fdo_ready        : in  std_logic
 	);
-END CryptoCore;
+END CryptoCore_2pass;
 
-ARCHITECTURE behavioral OF CryptoCore IS
+ARCHITECTURE behavioral OF CryptoCore_2pass IS
 
 	---------------------------------------------------------------------------
 	--! Constant Values
@@ -750,6 +750,9 @@ BEGIN
 					ELSE
 						n_state_s <= ISAP_MAC_ABSORB_AD_PAD;
 					END IF;
+				END IF;
+				IF (key_valid = '1') THEN
+					n_state_s <= ISAP_MAC_ABSORB_AD_PAD;
 				END IF;
 
 			WHEN ISAP_MAC_ABSORB_AD =>

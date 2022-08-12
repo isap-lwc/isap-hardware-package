@@ -5,8 +5,7 @@ declare -a arr=(
 "v1_8bit"
 "v1_16bit"
 "v1_lowlatency"
-"v1_StP"
-"v1_decfail"
+"v1_stp"
 "v2"
 )
 
@@ -17,8 +16,9 @@ NC='\033[0m' # No Color
 make clean
 for i in "${arr[@]}"
 do
+	echo "################################################################################"
 	echo "Running testbench for $i..."
-	res=$(make $i | grep "::")
+	res=$(make $i | grep "\[")
 	if [[ $res == *"PASS"* ]]; then
 		printf "${GREEN}PASS!${NC}\n"
 	else
@@ -26,4 +26,3 @@ do
 	fi
 	make clean
 done
-

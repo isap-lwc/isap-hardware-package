@@ -1,9 +1,9 @@
 import random
 
-newkey = [True,False]
-decrypt = [True,False]
-adlen = [0,1,2,3,4,5,6,7,8,9,15,16,17,23,24,25,31,32,33]
-ptlen = [0,1,2,3,4,5,6,7,8,9,15,16,17,23,24,25,31,32,33]
+newkey = [False]        # False means that a new key is sent every time
+decrypt = [True,False]  # Ignored if hashmode == true
+adlen = [0,1,2,3,4,5,6,7,8,9,15,16,17,23,24,25,31,32]
+ptlen = [0,1,2,3,4,5,6,7,8,9,15,16,17,23,24,25,31,32]
 hashmode = [True,False]
 
 lines = []
@@ -13,8 +13,6 @@ for k in newkey:
         for a in adlen:
             for p in ptlen:
                 for h in hashmode:
-                    if h == True and k == False:
-                        continue
                     lines.append(f'{k},\t{d},\t{a},\t{p},\t{h}:')
 
 random.shuffle(lines)

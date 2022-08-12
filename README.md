@@ -4,28 +4,18 @@
 - Primary Hardware Designers:
   - Robert Primas (https://rprimas.github.io, rprimas@proton.me),
 - LWC candidate: ISAP
-- LWC Hardware API version: 1.1
+- LWC Hardware API version: 1.2.0
 
-ISAP is a family of lightweight authenticated encryption algorithms designed with a focus on robustness against implementation attacks and is currently competing in the final round of the NIST Standardization Process for [Lightweight Cryptography](https://csrc.nist.gov/Projects/lightweight-cryptography/finalists) (2019-). It is of particular interest for applications like firmware updates where robustness against power analysis and fault attacks is crucial while codesize and a small footprint in hardware matters. ISAP's original version was published at FSE 2017.
+ISAP is a family of lightweight authenticated encryption algorithms designed with a focus on robustness against implementation attacks and is currently competing in the final round of the NIST Standardization Process for [Lightweight Cryptography](https://csrc.nist.gov/Projects/lightweight-cryptography/finalists) (2019-). It is of particular interest for applications like firmware updates where robustness against power analysis and fault attacks is crucial while codesize and a small footprint in hardware matters. ISAP's original version was published at FSE 2017. 
 
 ## Available Variants
 
-- **v1**
-  - `isapa128av20 + asconhashv12, 32-bit interface, 1 permutation round per clock cycle`
-- **v1_8bit**
-  - `isapa128av20 + asconhashv12,  8-bit interface, 1 permutation round per clock cycle`
-- **v1_16bit**
-  - `isapa128av20 + asconhashv12, 16-bit interface, 1 permutation round per clock cycle`
-- **v1_lowlatency**
-  - `isapa128av20 + asconhashv12, 32-bit interface, 2 permutation rounds per clock cycle`
-- **v1_testmode1**
-  - Same RTL code as v1 but testbench performs IO stalls.
-- **v1_StP**
-  - Same parameters as v1 but tag comparison is implemented in a leakage-resilient manner using the SuKS-then-PVP (StP) construction from "https://eprint.iacr.org/2021/402.pdf".
-- **v1_decfail**
-  - Same parameters as v1 but LWC interface was adapted to automatically test decryption failures.
-- **v2**
-  - `isapk128av20, 16-bit interface, 1 permutation round per clock cycle`
+- **v1** : `isapa128av20 + asconhashv12, 32-bit interface, 1 permutation round per clock cycle`
+- **v1_8bit** : `isapa128av20 + asconhashv12, 8-bit interface, 1 permutation round per clock cycle`
+- **v1_16bit** : `isapa128av20 + asconhashv12, 16-bit interface, 1 permutation round per clock cycle`
+- **v1_lowlatency** : `isapa128av20 + asconhashv12, 32-bit interface, 2 permutation rounds per clock cycle`
+- **v1_stp** : `isapa128av20 + asconhashv12, 32-bit interface, 1 permutation round per clock cycle, StP-based tag verification`
+- **v2** : `isapk128av20, 16-bit interface, 1 permutation round per clock cycle`
 
 ## Folders
 
@@ -44,7 +34,7 @@ ISAP is a family of lightweight authenticated encryption algorithms designed wit
 
 - Install testvector generation scripts:
   - `pip install software/cryptotvgen`
-- Compile ISAP software reference implementations:
+- Compile Ascon software reference implementations:
   - `cryptotvgen --prepare_libs --candidates_dir=software/isap_ref`
 - Locate testvector generation scripts:
   - `cd software/cryptotvgen/examples`

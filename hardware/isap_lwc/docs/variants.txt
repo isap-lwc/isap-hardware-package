@@ -101,12 +101,6 @@ v1_16bit with CCW=CCSW=16:
     Hashing Throughput for large Nh = 2.00 cycles/byte
 
 ---------------------------------------------------------------------------
-v1_dec_fail with CCW=CCSW=32:
-
-NOTE: This version comes with a testbench that tests proper handling of decryption errors.
-Otherwise identical as v1. Can be skipped for benchmarks.
-
----------------------------------------------------------------------------
 v1_low_latency with CCW=CCSW=32:
 	
 	Reference software:    
@@ -140,7 +134,7 @@ v1_low_latency with CCW=CCSW=32:
     Hashing Throughput for large Nh = 1.00 cycles/byte
 
 ---------------------------------------------------------------------------
-v1_StP with CCW=CCSW=32:
+v1_stp with CCW=CCSW=32:
 	
 	Reference software:    
 		aead: isapa128av20
