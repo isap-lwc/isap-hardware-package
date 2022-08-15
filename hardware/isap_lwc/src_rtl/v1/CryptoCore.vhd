@@ -2,7 +2,7 @@
 --! @file       CryptoCore.vhd
 --! @brief      Implementation of ISAP.
 --!
---! @author     Robert Primas <rprimas@protonmail.com>
+--! @author     Robert Primas
 --! @copyright  Copyright (c) 2020 IAIK, Graz University of Technology, AUSTRIA
 --!             All rights Reserved.
 --! @license    This project is released under the GNU Public License.          

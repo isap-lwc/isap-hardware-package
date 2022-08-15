@@ -16,7 +16,7 @@ MODULES_V1=\
 	src_rtl/LWC/PreProcessor.o\
 	src_rtl/LWC/PostProcessor.o\
 	src_rtl/LWC/LWC_2pass.o\
-	src_tb/v1/LWC_config_tb.o\
+	src_tb/v1/LWC_TB_config.o\
 	src_tb/LWC_TB_2pass_uut.o\
 	src_tb/LWC_TB
 MODULES_V1_8BIT=\
@@ -31,7 +31,7 @@ MODULES_V1_8BIT=\
 	src_rtl/LWC/PreProcessor.o\
 	src_rtl/LWC/PostProcessor.o\
 	src_rtl/LWC/LWC_2pass.o\
-	src_tb/v1_8bit/LWC_config_tb.o\
+	src_tb/v1_8bit/LWC_TB_config.o\
 	src_tb/LWC_TB_2pass_uut.o\
 	src_tb/LWC_TB
 MODULES_V1_16BIT=\
@@ -46,7 +46,7 @@ MODULES_V1_16BIT=\
 	src_rtl/LWC/PreProcessor.o\
 	src_rtl/LWC/PostProcessor.o\
 	src_rtl/LWC/LWC_2pass.o\
-	src_tb/v1_16bit/LWC_config_tb.o\
+	src_tb/v1_16bit/LWC_TB_config.o\
 	src_tb/LWC_TB_2pass_uut.o\
 	src_tb/LWC_TB
 MODULES_V1_LL=\
@@ -61,7 +61,7 @@ MODULES_V1_LL=\
 	src_rtl/LWC/PreProcessor.o\
 	src_rtl/LWC/PostProcessor.o\
 	src_rtl/LWC/LWC_2pass.o\
-	src_tb/v1/LWC_config_tb.o\
+	src_tb/v1/LWC_TB_config.o\
 	src_tb/LWC_TB_2pass_uut.o\
 	src_tb/LWC_TB
 MODULES_V1_STP=\
@@ -76,7 +76,7 @@ MODULES_V1_STP=\
 	src_rtl/LWC/PreProcessor.o\
 	src_rtl/LWC/PostProcessor.o\
 	src_rtl/LWC/LWC_2pass.o\
-	src_tb/v1/LWC_config_tb.o\
+	src_tb/v1/LWC_TB_config.o\
 	src_tb/LWC_TB_2pass_uut.o\
 	src_tb/LWC_TB
 MODULES_V2=\
@@ -91,7 +91,7 @@ MODULES_V2=\
 	src_rtl/LWC/PreProcessor.o\
 	src_rtl/LWC/PostProcessor.o\
 	src_rtl/LWC/LWC_2pass.o\
-	src_tb/v2/LWC_config_tb.o\
+	src_tb/v2/LWC_TB_config.o\
 	src_tb/LWC_TB_2pass_uut.o\
 	src_tb/LWC_TB
 

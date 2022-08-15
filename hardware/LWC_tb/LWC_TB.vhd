@@ -22,7 +22,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use std.textio.all;
 
-use work.LWC_config_tb;
+use work.LWC_TB_config;
 use work.NIST_LWAPI_pkg.all;
 
 entity LWC_TB IS
@@ -35,10 +35,10 @@ entity LWC_TB IS
         G_RDI_STALLS       : natural  := 3; --! Number of cycles to stall rdi_valid
         G_RANDOM_STALL     : boolean  := false; --! Stall for a random number of cycles in the range [0..G_xx_STALLS], when G_TEST_MODE = 4
         G_CLK_PERIOD_PS    : positive := 10_000; --! Simulation clock period in picoseconds
-        G_FNAME_PDI        : string   := LWC_config_tb.G_FNAME_PDI; -- ! Path to the input file containing cryptotvgen PDI testvector data
-        G_FNAME_SDI        : string   := LWC_config_tb.G_FNAME_SDI; -- ! Path to the input file containing cryptotvgen SDI testvector data
-        G_FNAME_DO         : string   := LWC_config_tb.G_FNAME_DO; -- ! Path to the input file containing cryptotvgen DO testvector data
-        G_FNAME_RDI        : string   := LWC_config_tb.G_FNAME_RDI; -- ! Path to the input file containing random data
+        G_FNAME_PDI        : string   := LWC_TB_config.G_FNAME_PDI; -- ! Path to the input file containing cryptotvgen PDI testvector data
+        G_FNAME_SDI        : string   := LWC_TB_config.G_FNAME_SDI; -- ! Path to the input file containing cryptotvgen SDI testvector data
+        G_FNAME_DO         : string   := LWC_TB_config.G_FNAME_DO; -- ! Path to the input file containing cryptotvgen DO testvector data
+        G_FNAME_RDI        : string   := LWC_TB_config.G_FNAME_RDI; -- ! Path to the input file containing random data
         G_PRNG_RDI         : boolean  := false; --! Use testbench's internal PRNG to generate RDI input instead of the file `G_FNAME_RDI`
         G_RANDOM_SEED      : positive := 1; --! Internal PRNG seed, must be positive
         G_FNAME_LOG        : string   := "log.txt"; --! Path to the generated log file
